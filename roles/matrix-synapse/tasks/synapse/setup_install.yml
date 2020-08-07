@@ -81,6 +81,15 @@
     owner: "{{ matrix_user_username }}"
     group: "{{ matrix_user_groupname }}"
 
+- name: Add SAML service provider pre-requisites
+  copy:
+    src: "{{ inventory_dir }}/files/{{ matrix_server_fqn_matrix }}/keycloak-saml/"
+    dest: "{{ matrix_synapse_config_dir_path}}/keycloak-saml/"
+    owner: "{{ matrix_user_username }}"
+    group: "{{ matrix_user_groupname }}"
+    mode: preserve
+    backup: yes
+
 - name: Ensure Synapse log config installed
   template:
     src: "{{ matrix_synapse_template_synapse_log }}"

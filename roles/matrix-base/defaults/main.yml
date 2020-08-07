@@ -13,7 +13,7 @@ matrix_server_fqn_matrix: "matrix.{{ matrix_domain }}"
 
 # This is where you access the web UI from and what we set up here.
 # This and the Matrix FQN (see above) are expected to be on the same server.
-matrix_server_fqn_riot: "riot.{{ matrix_domain }}"
+matrix_server_fqn_riot: "element.{{ matrix_domain }}"
 
 # This is where you access the Dimension.
 matrix_server_fqn_dimension: "dimension.{{ matrix_domain }}"

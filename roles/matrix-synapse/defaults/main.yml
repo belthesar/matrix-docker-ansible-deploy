@@ -394,6 +394,10 @@ matrix_synapse_configuration_extension_yaml: |
   #   system_mxid_display_name: "Server Notices"
   #   system_mxid_avatar_url: "mxc://server.com/oumMVlgDnLYFaPVkExemNVVZ"
   #   room_name: "Server Notices"
+  saml2_config:
+    enabled: true
+    config_path: "/data/keycloak-saml/sp_conf.py"
+    idp_redirect_url: "https://{{ keycloak_server_url }}/auth/realms/{{ keycloak_realm }}/protocol/saml"
 
 matrix_synapse_configuration_extension: "{{ matrix_synapse_configuration_extension_yaml|from_yaml if matrix_synapse_configuration_extension_yaml|from_yaml is mapping else {} }}"
 
